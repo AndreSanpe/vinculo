@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo}  alt="logo" style={{height: '400px'}}/>
+        <img src={logo}  alt="logo" style={{height: '200px'}}/>
         <br></br>
         <br></br>
 
