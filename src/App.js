@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const Home = () => (
@@ -65,11 +65,15 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/services" component={Services} />
+      <Routes>
+
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/services" component={Services} />
+      </Routes>
     </BrowserRouter>
   );
 }
 
+export default App;
