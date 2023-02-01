@@ -1,40 +1,75 @@
-import logo from './imagens/brincando.png';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+
+const Home = () => (
+  <Container>
+    <Row>
+      <Col xs={12} md={8} lg={6}>
+        <h1>Bem-vindo ao site de psicologia</h1>
+        <p>Aqui você encontrará informações sobre nossos serviços e nossos profissionais.</p>
+      </Col>
+    </Row>
+  </Container>
+);
+
+const About = () => (
+  <Container>
+    <Row>
+      <Col xs={12} md={8} lg={6}>
+        <h1>Sobre Nós</h1>
+        <p>Somos uma equipe de psicólogos especializados em diferentes áreas da saúde mental.</p>
+      </Col>
+    </Row>
+  </Container>
+);
+
+const Contact = () => (
+  <Container>
+    <Row>
+      <Col xs={12} md={8} lg={6}>
+        <h1>Contato</h1>
+        <p>Entre em contato conosco para agendar uma consulta ou tirar suas dúvidas.</p>
+      </Col>
+    </Row>
+  </Container>
+);
+
+const Services = () => (
+  <Container>
+    <Row>
+      <Col xs={12} md={8} lg={6}>
+        <h1>Nossos Serviços</h1>
+        <p>Oferecemos consultas individuais e em grupo, além de terapias online.</p>
+      </Col>
+    </Row>
+  </Container>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo}  alt="logo" style={{height: '200px'}}/>
-        <br></br>
-        <br></br>
-
-        <h3>
-          Estamos montando nosso cantinho!!!
-        </h3>
-        <h1>
-          
-        <a
-          className="App-link"
-          href="https://www.instagram.com/vinculodesenvolvimentoinfantil/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-          Vínculo Desenvolvimento Infantil
-        </a>
-          </h1>
-          <a
-          className="App-link"
-          href="https://www.google.com/maps/dir/-21.7961111,-46.5682413/vinculo+desenvolvimento+infantil+belo+horizonte+mg/@-21.0632709,-46.3983822,8z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0xa6917d845fc121:0x61cb3b99f6481460!2m2!1d-43.9965149!2d-19.8919642"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-          <p>Rua Romualdo Lopes Cançado, 19 - Castelo, Belo Horizonte - MG, 30840-460</p>
-          </a>
-
-      </header>
-    </div>
+    <BrowserRouter>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">Sobre Nós</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contato</Link>
+          </li>
+          <li>
+            <Link to="/services">Serviços</Link>
+          </li>
+        </ul>
+      </nav>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/services" component={Services} />
+    </BrowserRouter>
   );
 }
 
-export default App;
